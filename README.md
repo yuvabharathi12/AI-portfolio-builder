@@ -52,6 +52,27 @@ Instead of always generating `About / Skills / Projects`, the AI:
 
 ---
 
+## 🚀 Deployment (Free Tier)
+
+### 1. Deploy Backend (FastAPI) on [Render](https://render.com)
+1. **New Web Service** → Connect your GitHub Repo.
+2. **Build Command:** `pip install -r requirements.txt`
+3. **Start Command:** `uvicorn main:app --host 0.0.0.0 --port 10000`
+4. **Environment Variables:**
+   - `GROQ_API_KEY`: Your key from [Groq Cloud](https://console.groq.com/keys)
+5. **Copy the URL** Render gives you (e.g., `https://ai-portfolio-backend.onrender.com`).
+
+### 2. Deploy Frontend (Streamlit) on [Streamlit Community Cloud](https://streamlit.io/cloud)
+1. **New App** → Connect your GitHub Repo.
+2. **Main file:** `app.py`
+3. **Advanced Settings (Secrets):** Add your backend URL:
+   ```toml
+   API_URL = "https://your-backend-url.onrender.com"
+   ```
+4. **Deploy!**
+
+---
+
 ## API Endpoints
 
 | Method | Path                        | Description                   |
